@@ -2,3 +2,7 @@
 body{
     background-color: wheat;
 }
+
+.loader{
+    display: none;
+}

@@ -1,20 +1,31 @@
 import { RhymeResultsTemplate } from "./templates/rhymeResults.js";
 import { capitaliseFirst } from "./modules/capitalise.js";
 
-let ressies = "";
+let rhymeSearchResults = "";
+
+let savedWordArray = []
+
+sessionStorage.setItem('savedWordArray', JSON.stringify(savedWordArray))
 
 const rhymeSearchForm = document.getElementById("rhymeSearchForm");
 const rhymeInput = document.getElementById("rhymeInput");
 
+
 rhymeSearchForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
+
+  if(rhymeInput.value != String){
+    alert('Words only, if you want to rhyme a number please spell it out')
+    return;
+  }
   const searchTerm = rhymeInput.value.toLowerCase();
-  console.log(searchTerm);
   getRhymes(searchTerm);
-  RhymeResultsTemplate(capitaliseFirst(searchTerm), ressies);
+  RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults);
 });
 
+
 function getRhymes(searchTerm) {
+  $(".loader").show()
   $.ajax({
     method: "GET",
     url: "https://api.api-ninjas.com/v1/rhyme?word=" + searchTerm,
@@ -22,24 +33,15 @@ function getRhymes(searchTerm) {
     contentType: "application/json",
     async: false,
     success: function (result) {
-      ressies = result;
+      rhymeSearchResults = result;
     },
     error: function ajaxError(jqXHR) {
+      console.log(jqXHR)
       console.error("Error: ", jqXHR.responseText);
     },
-  });
+    complete: function(){
+        $(".loader").hide();
+      }
+  })
 }
 
-let savedWordArray = []
-
-sessionStorage.setItem('savedWordArray', JSON.stringify(savedWordArray))
-
-
-
-
-// let t = JSON.parse(sessionStorage.getItem('savedWordArray'))
-// t.push('Tonky')
-
-// sessionStorage.setItem('savedWordArray', JSON.stringify(t))
-
-// console.log(JSON.parse(sessionStorage.getItem('savedWordArray')))

@@ -8,17 +8,21 @@
 </head>
 <body>
 
-    <div>
+    <div class="main-title">
         <h1>Rhyme Time</h1>
     </div>
 
-    <form id="rhymeSearchForm" class="searchForm">
+    <form id="rhymeSearchForm" class="rhyme-search-form">
         <fieldset>
             <label>Enter a Word</label>
             <input id="rhymeInput" name="rhymeInput" type="text" minlength="2" maxlength="20" required>
         </fieldset>
-        <button id="rhymeSearchButton">Search</button>
+        <button id="rhymeSearchButton" class="submit-button">Search</button>
     </form>
+
+    <p class="loader">
+        loading
+    </p>
 
     <div id="rhymeResultsContainer">
         
