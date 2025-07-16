@@ -15,19 +15,19 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
     rhymeResultsArray.map(item => {
         
         const rhymeListItem = document.createElement('li')
-        rhymeListItem.class = 'rhyme-results-entry'
+        rhymeListItem.className = 'rhyme-results-entry'
 
         const rhymeListWord = document.createElement('p')
-        rhymeListWord.class = 'rhyme-entry-title'
+        rhymeListWord.className = 'rhyme-entry-title'
         rhymeListWord.innerText = (capitaliseFirst(item.word))
 
         const rhymeListScore = document.createElement('p')
-        rhymeListScore.class = 'rhyme-entry-score'
+        rhymeListScore.className = 'rhyme-entry-score'
         rhymeListScore.innerText = (`Rhyme score: ${item.score}`)
        
         const saveRhymeButton = document.createElement('button')
         saveRhymeButton.id = 'addWordButton'
-        saveRhymeButton.class = 'add-button'
+        saveRhymeButton.className = 'add-button'
         saveRhymeButton.textContent = '+'
         saveRhymeButton.value = item.word
 

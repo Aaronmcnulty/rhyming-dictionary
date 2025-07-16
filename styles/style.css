@@ -22,3 +22,32 @@ form{
     justify-content: space-evenly;
 
 }
+
+.rhyme-results-entry{
+    display: flex;
+    width: 40vw;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    border:solid;
+}
+.rhyme-entry-title{
+    font-size: 1.5vw;
+    font-weight: 1000;
+
+}
+
+.rhyme-entry-score{
+    font-style:oblique;
+
+}
+
+.rhyme-entry-title, .rhyme-entry-score{
+    grid-column: 1;
+}
+
+.add-button{
+    grid-column: 3;
+    grid-row: 1;
+}
