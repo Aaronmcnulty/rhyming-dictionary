@@ -2,7 +2,8 @@ import selectedWordList from "./selectedWordList.js"
 import { capitaliseFirst } from "../modules/capitalise.js"
 
 
-export function RhymeResultsTemplate(searchWord, resultsData) {
+export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
+    console.log(rhymeResultsArray)
     const rhymeResultsContainer = document.getElementById('rhymeResultsContainer')
     rhymeResultsContainer.innerText = ''
 
@@ -12,13 +13,13 @@ export function RhymeResultsTemplate(searchWord, resultsData) {
     const wordResultsList = document.createElement('ul')
 
 
-    resultsData.map(item => {
+    rhymeResultsArray.map(item => {
         const listItem = document.createElement('li')
-        listItem.innerText = capitaliseFirst(item)
+        listItem.innerText = capitaliseFirst(item.word)
         const addWordButton = document.createElement('button')
         addWordButton.id = 'addWordButton'
         addWordButton.textContent = '+'
-        addWordButton.value = item
+        addWordButton.value = item.word
         wordResultsList.append(listItem)
         wordResultsList.append(addWordButton)
         

@@ -14,34 +14,33 @@ const rhymeInput = document.getElementById("rhymeInput");
 rhymeSearchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-  if(rhymeInput.value != String){
+  if(typeof rhymeInput.value != 'string'){
     alert('Words only, if you want to rhyme a number please spell it out')
     return;
   }
   const searchTerm = rhymeInput.value.toLowerCase();
-  getRhymes(searchTerm);
-  RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults);
+  
+  getData(searchTerm)
+  console.log(rhymeSearchResults)
 });
 
 
-function getRhymes(searchTerm) {
-  $(".loader").show()
-  $.ajax({
-    method: "GET",
-    url: "https://api.api-ninjas.com/v1/rhyme?word=" + searchTerm,
-    headers: { "X-Api-Key": "3dYIM/3ev5hDsGN4zhTxcA==Knebrp8phCOTeh2h" },
-    contentType: "application/json",
-    async: false,
-    success: function (result) {
-      rhymeSearchResults = result;
-    },
-    error: function ajaxError(jqXHR) {
-      console.log(jqXHR)
-      console.error("Error: ", jqXHR.responseText);
-    },
-    complete: function(){
-        $(".loader").hide();
-      }
-  })
+async function getData(searchTerm) {
+  const url = `https://api.datamuse.com/words?sl=${searchTerm}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const data = await response.json();
+    rhymeSearchResults = data
+  } catch (error) {
+    console.error(error.message);
+  }
+    RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults);
 }
+
+
+
+
 
