@@ -6,3 +6,19 @@ body{
 .loader{
     display: none;
 }
+
+h1{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+.rhyme-content-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}

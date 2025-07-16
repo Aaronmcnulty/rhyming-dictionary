@@ -1,12 +1,20 @@
 
 export default function selectedWordList(){
-
     const savedWordArray = JSON.parse(sessionStorage.getItem('savedWordArray'))
-    console.log(savedWordArray)
+
     const selectedWordsContainer = document.getElementById('selectedWordsContainer')
     selectedWordsContainer.textContent = ''
+
+    const savedWordsTitle = document.createElement('h3')
     
-    if(savedWordArray){
+    savedWordsTitle.innerText = "Your Selected Rhymes"
+
+    selectedWordsContainer.append(savedWordsTitle)
+
+
+    
+        const selectedWords = document.createElement('div')
+        selectedWords.textContent = ''
         savedWordArray.map(item => {
             const wordListEntry = document.createElement('li')
             wordListEntry.id = 'wordListEntry'
@@ -27,10 +35,8 @@ export default function selectedWordList(){
                 console.log(savedWordArray)
                 selectedWordList()
             })
-
-            selectedWordsContainer.append(wordListEntry)
+            selectedWordsContainer.append(selectedWords)
+            selectedWords.append(wordListEntry)
             wordListEntry.append(removeEntryButton)
         })
     }
-
-}

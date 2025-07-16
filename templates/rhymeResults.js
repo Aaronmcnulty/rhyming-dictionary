@@ -15,7 +15,7 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
 
     rhymeResultsArray.map(item => {
         const listItem = document.createElement('li')
-        listItem.innerText = capitaliseFirst(item.word)
+        listItem.innerText = (capitaliseFirst(item.word) + '  ' + item.score)
         const addWordButton = document.createElement('button')
         addWordButton.id = 'addWordButton'
         addWordButton.textContent = '+'
