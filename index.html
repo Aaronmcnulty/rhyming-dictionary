@@ -15,13 +15,17 @@
     <form id="rhymeSearchForm" class="searchForm">
         <fieldset>
             <label>Enter a Word</label>
-            <input id="rhymeInput" name="rhymeInput" type="text">
+            <input id="rhymeInput" name="rhymeInput" type="text" minlength="2" maxlength="20" required>
         </fieldset>
         <button id="rhymeSearchButton">Search</button>
     </form>
 
     <div id="rhymeResultsContainer">
         
+    </div>
+
+    <div id="selectedWordsContainer">
+
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
