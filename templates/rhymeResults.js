@@ -14,9 +14,8 @@ export function RhymeResultsTemplate(searchWord, resultsData) {
         listItem.innerText = capitaliseFirst(item)
         wordResultsList.append(listItem)
    })
-
+   
     rhymeResultsContainer.append(resultsTitle)
     rhymeResultsContainer.append(wordResultsList)
-
 }
 
