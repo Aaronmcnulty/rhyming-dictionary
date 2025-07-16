@@ -18,11 +18,13 @@ export default function selectedWordList(){
         savedWordArray.map(item => {
             const wordListEntry = document.createElement('li')
             wordListEntry.id = 'wordListEntry'
+            wordListEntry.class = 'wordListEntry'
+
             wordListEntry.textContent = item
 
             const removeEntryButton = document.createElement('button')
             removeEntryButton.textContent = 'remove'
-            removeEntryButton.className = 'removeEntryButton'
+            removeEntryButton.class = 'removeEntryButton'
             removeEntryButton.value = item
 
             removeEntryButton.addEventListener('click', function(event){
