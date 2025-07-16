@@ -30,3 +30,16 @@ function getRhymes(searchTerm) {
   });
 }
 
+let savedWordArray = []
+
+sessionStorage.setItem('savedWordArray', JSON.stringify(savedWordArray))
+
+
+
+
+// let t = JSON.parse(sessionStorage.getItem('savedWordArray'))
+// t.push('Tonky')
+
+// sessionStorage.setItem('savedWordArray', JSON.stringify(t))
+
+// console.log(JSON.parse(sessionStorage.getItem('savedWordArray')))

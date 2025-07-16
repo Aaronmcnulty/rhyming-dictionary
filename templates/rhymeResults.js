@@ -11,7 +11,7 @@ export function RhymeResultsTemplate(searchWord, resultsData) {
 
     const wordResultsList = document.createElement('ul')
 
-    let savedWordArray = []
+
     resultsData.map(item => {
         const listItem = document.createElement('li')
         listItem.innerText = capitaliseFirst(item)
@@ -23,9 +23,12 @@ export function RhymeResultsTemplate(searchWord, resultsData) {
         wordResultsList.append(addWordButton)
         
         addWordButton.addEventListener('click', function() {
+            let savedWordArray = JSON.parse(sessionStorage.getItem('savedWordArray'))
             savedWordArray.push(addWordButton.value)
-            console.log(savedWordArray)
-            selectedWordList(savedWordArray)
+
+            sessionStorage.setItem('savedWordArray', JSON.stringify(savedWordArray))
+            
+            selectedWordList()
         })
    })
     rhymeResultsContainer.append(resultsTitle)
