@@ -10,12 +10,16 @@ describe('capitlaiseFirst function should', () => {
       expect(capitaliseFirst('duck')).not.toBe('Goose')
   });
 
-  test('Not change the other letters to lowercase.', () => {
-      expect(capitaliseFirst('DUCK')).not.toBe('Duck')
-  })
-
   test('Return the string unchanged if the first letter is a capital already', () => {
       expect(capitaliseFirst('Duck')).toBe('Duck')
+  })
+
+  test('Change everything but the first letter to lowercase', () => {
+      expect(capitaliseFirst('GOOSE')).toBe('Goose')
+  })
+
+  test('Change first letter to uppercase and the rest to lowercase', () => {
+      expect(capitaliseFirst('gOOSE')).toBe('Goose')
   })
 
 });

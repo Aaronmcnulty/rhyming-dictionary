@@ -1,4 +1,4 @@
 
 export function capitaliseFirst(word){
-    return String(word).charAt(0).toUpperCase() + String(word).slice(1)
+    return word.charAt(0).toUpperCase() + String(word).slice(1).toLowerCase()
 }
