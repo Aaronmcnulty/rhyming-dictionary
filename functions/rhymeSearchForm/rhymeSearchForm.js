@@ -5,7 +5,6 @@ export function rhymeSearchForm(){
 const rhymeSearchForm = document.getElementById("rhymeSearchForm");
 const rhymeInput = document.getElementById("rhymeInput");
 
-
 //Add event listener for form submission.
 rhymeSearchForm.addEventListener("submit", (event) => {
   event.preventDefault();

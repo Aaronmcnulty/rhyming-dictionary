@@ -34,13 +34,13 @@ function createRhymeResultEntry(rhymeEntryData, rhymeResultsList){
         const rhymeListItem = document.createElement('li')
         rhymeListItem.className = 'rhyme-results-entry'
 
-        //Creates title element for the entry.
+        //Creates title element for the list entry.
         const rhymeListWord = document.createElement('p')
         rhymeListWord.className = 'rhyme-entry-title'
         //Capitalises the first letter of the word before its inserted into innerText.
         rhymeListWord.innerText = (capitaliseFirst(rhymeEntryData.word))
 
-        //Creates 'rhyme score' element for the entry
+        //Creates 'rhyme score' element for the list entry.
         const rhymeListScore = document.createElement('p')
         rhymeListScore.className = 'rhyme-entry-score'
         rhymeListScore.innerText = (`Rhyme score: ${rhymeEntryData.score}`)
@@ -74,10 +74,10 @@ function addToSavedWordsList(rhymeString){
             //Pardes savedWordArray from JSON and stores the array as 'parsedSavedWordArray'.
             let parsedSavedWordArray = JSON.parse(sessionStorage.getItem('savedWordArray'))
             //Push passed in argument to the 'parsedSavedWordArray'.
-            savedWordArray.push(rhymeString)
+            parsedSavedWordArray.push(rhymeString)
             /*
             'parsedSavedWordArray' is converted to JSON using JSON.stringify. 
             Overwrites 'savedWordArray' in sessionStorage with 'parsedSavedWordArray'.
             */
-            sessionStorage.setItem('savedWordArray', JSON.stringify(savedWordArray))
+            sessionStorage.setItem('savedWordArray', JSON.stringify(parsedSavedWordArray))
 }
