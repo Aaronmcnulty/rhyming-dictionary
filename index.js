@@ -12,7 +12,7 @@ sessionStorage.setItem("savedWordArray", JSON.stringify(savedWordArray));
 let rhymeSearchResults = "";
 
 // Fetch the rhyming words from the api.
-export async function getData(searchTerm) {
+export async function fetchRhymeData(searchTerm) {
   //Append the url with the user entered search term.
   const url = `https://api.datamuse.com/words?sl=${searchTerm}`;
   try {
