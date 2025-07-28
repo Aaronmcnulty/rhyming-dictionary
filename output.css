@@ -73,19 +73,28 @@ ul {
 .rhyme-entry-title {
   font-size: 5vw;
   font-weight: 1000;
+  color: rgb(104, 154, 135);
 }
 
 .rhyme-entry-score {
   font-style: oblique;
 }
 
-.rhyme-entry-title, .rhyme-entry-score {
+.rhyme-entry-title,
+.rhyme-entry-score {
   grid-column: 1;
 }
 
-.add-button {
+.save-word-button {
   grid-column: 3;
   grid-row: 1;
+  border: none;
+  width: 15%;
+  height: 2.5em;
+  font-size: 5vw;
+  background-color: rgb(104, 154, 135);
+  color: wheat;
+  border-radius: 0.5em;
 }
 
 .selected-words-container {
@@ -109,7 +118,8 @@ ul {
   flex-direction: row;
 }
 
-.removeEntryButton, .saved-word-text {
+.removeEntryButton,
+.saved-word-text {
   margin-right: 1em;
 }
 
@@ -137,7 +147,9 @@ ul {
   font-size: 5vw;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0em;
   font-family: "Labrada", serif;
 }

@@ -49,7 +49,7 @@ function createRhymeResultEntry(rhymeEntryData, rhymeResultsList){
         //Creates button so users can add the word to the selected words list.
         const saveRhymeButton = document.createElement('button')
         saveRhymeButton.id = 'addWordButton'
-        saveRhymeButton.className = 'add-button'
+        saveRhymeButton.className = 'save-word-button'
         saveRhymeButton.textContent = '+'
         saveRhymeButton.value = rhymeEntryData.word
 
