@@ -7,6 +7,8 @@ const rhymeInput = document.getElementById("rhymeInput");
 
 //Add event listener for form submission.
 rhymeSearchForm.addEventListener("submit", (event) => {
+  
+  //Lowercases value for use in the API url
   const searchTerm = rhymeInput.value.toLowerCase();
 
   event.preventDefault();
@@ -18,7 +20,6 @@ rhymeSearchForm.addEventListener("submit", (event) => {
   if (!/^[a-zA-Z]+$/.test(searchTerm)) {
     alert("You've used special characters, please use letters only")
   }
-  //Lowercases value for use in the API url
 
   //Calls the fetch API function and passes in the searchterm to be used.
   fetchRhymeData(searchTerm);
