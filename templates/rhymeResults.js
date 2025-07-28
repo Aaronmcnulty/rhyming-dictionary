@@ -13,7 +13,7 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
     resultsTitle.innerText = (`${searchWord} rhymes with...`)
 
     const rhymeResultsList = document.createElement('ul')
-
+    rhymeResultsList.className = 'results-list'
     /*
     Map through the results array and pass each entry to the 'createRhymeResultEntry' as well as the rhymeResultsList
     so it can be appended.
