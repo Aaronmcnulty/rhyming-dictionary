@@ -10,9 +10,19 @@ let savedWordArray = [];
 sessionStorage.setItem("savedWordArray", JSON.stringify(savedWordArray));
 
 let rhymeSearchResults = "";
+const loadingElement = document.getElementById('loading-text-container') 
+
+function loadingDisplayToggle(){
+  if(loadingElement.style.display == 'flex'){
+    loadingElement.style.display = 'none'
+  } else {
+    loadingElement.style.display = 'flex'
+  }
+}
 
 // Fetch the rhyming words from the api.
 export async function fetchRhymeData(searchTerm) {
+  loadingDisplayToggle()
   //Append the url with the user entered search term.
   const url = `https://api.datamuse.com/words?sl=${searchTerm}`;
   try {
@@ -34,5 +44,6 @@ export async function fetchRhymeData(searchTerm) {
     'searhTerm' is passed to 'capitaliseFirst'function which returns the string with the first 
     letter capitalised.
   */
+  loadingDisplayToggle()
   RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults);
 }

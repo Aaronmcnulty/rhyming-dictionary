@@ -12,13 +12,15 @@ rhymeSearchForm.addEventListener("submit", (event) => {
   const searchTerm = rhymeInput.value.toLowerCase();
 
   event.preventDefault();
-  //If rhymeInput value is not a string, an alert is triggered explaining that only strings can be used. 
+  //If rhymeInput value is a number, an alert is triggered explaining that only strings can be used. 
   if (!isNaN(searchTerm)) {
     alert("If you want to rhyme a number please write it as a word");
     return;
   }
+  //If any none alphetical characters are used an alert explains to the user than they can not be used.
   if (!/^[a-zA-Z]+$/.test(searchTerm)) {
     alert("You've used special characters, please use letters only")
+    return;
   }
 
   //Calls the fetch API function and passes in the searchterm to be used.

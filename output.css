@@ -2,7 +2,7 @@ body {
   background-color: pink;
 }
 
-.loader {
+#loading-text-container {
   display: none;
 }
 
