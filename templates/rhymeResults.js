@@ -10,6 +10,7 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
 
     //Create title and insert the 'searchWord' argument into the string.
     const resultsTitle = document.createElement('h3')
+    resultsTitle.className = 'results-title'
     resultsTitle.innerText = (`${searchWord} rhymes with...`)
 
     const rhymeResultsList = document.createElement('ul')
