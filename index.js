@@ -2,6 +2,7 @@ import { RhymeResultsTemplate } from "./templates/rhymeResults.js";
 import { capitaliseFirst } from "./modules/capitalise.js";
 import { rhymeSearchForm } from "./functions/rhymeSearchForm/rhymeSearchForm.js"
 
+
 //Runs function so search form is ready for use on render.
 rhymeSearchForm()
 
