@@ -15,8 +15,8 @@ export default function selectedWordList(){
     selectedWordsContainer.append(savedWordsTitle)
 
     //created selectedWords container. 
-    const selectedWords = document.createElement('div')
-    
+    const selectedWords = document.createElement('ul')
+    selectedWords.className = "selected-words-list"
     //Map each entry from the savedWordArray and pass it to the createWordListEntry function.
     savedWordArray.map(savedWord => {
        createWordListEntry(savedWord)
@@ -26,13 +26,16 @@ export default function selectedWordList(){
     function createWordListEntry(savedWord){
     //Creates list entry element from the passed in 'savedWord' string.
             const wordListEntry = document.createElement('li')
-            wordListEntry.class = 'wordListEntry'
-            wordListEntry.textContent = savedWord
-    
+            wordListEntry.className = 'saved-word-entry'
+
+            const wordListText = document.createElement('p')
+            wordListText.textContent = savedWord
+            wordListText.className = 'saved-word-text'
+
     //Creates the removeEntryButton and sets the saved word string as it's value.
             const removeEntryButton = document.createElement('button')
-            removeEntryButton.textContent = 'remove'
-            removeEntryButton.class = 'removeEntryButton'
+            removeEntryButton.textContent = 'X'
+            removeEntryButton.className = 'removeEntryButton'
             removeEntryButton.value = savedWord
 
     //Adds event listener which calls the removeWordFromArray function when clicked.. 
@@ -41,6 +44,7 @@ export default function selectedWordList(){
             })
 
     //Appends created elements to their respective parent elements.
+            wordListEntry.append(wordListText)
             wordListEntry.append(removeEntryButton)
             selectedWords.append(wordListEntry)
             selectedWordsContainer.append(selectedWords)

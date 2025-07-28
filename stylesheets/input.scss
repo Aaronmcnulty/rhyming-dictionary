@@ -3,9 +3,8 @@
 body{
     background-color:rgb(251, 243, 228);
     display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
+    grid-template-rows: 0.1fr 10fr 1.9fr;
     grid-template-columns: 12fr;
-  
     height:100svh;
     margin:0em;
 }
@@ -80,6 +79,36 @@ ul{
     grid-row: 1;
 }
 
+.selected-words-container{
+    border:solid ;
+    border-width: 0.2em 0em 0em 0em;
+}
+
+.selected-words-list{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: scroll;
+    justify-content: space-around;
+}
+
+.saved-word-entry{
+    margin:1em;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.removeEntryButton, .saved-word-text{
+    margin-right: 1em;
+}
+
+.removeEntryButton{
+        margin-right: 1em;
+        align-self: flex-start;
+        border:none;
+}
+
 .main-title{
     grid-row: 1;
     grid-column: 1/3;
@@ -88,5 +117,9 @@ ul{
     font-family: base.$title-font;
     color:rgb(74, 71, 71);
     background-color: wheat;
-    border-bottom: solid 0.2em;
+    border-bottom: solid 0.1em;
+}
+
+.page-title{ 
+    margin: 0em;
 }
