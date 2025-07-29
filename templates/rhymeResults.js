@@ -9,8 +9,7 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
   rhymeResultsContainer.innerText = "";
 
   //Create title and insert the 'searchWord' argument into the string.
-  const resultsTitle = document.createElement("h3");
-  resultsTitle.className = "results-title";
+  const resultsTitle = document.getElementById("results-title");
   resultsTitle.innerText = `${searchWord} rhymes with...`;
 
   const rhymeResultsList = document.createElement("ul");
@@ -24,7 +23,6 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
   });
 
   //Appends the container with the title and results list elements.
-  rhymeResultsContainer.append(resultsTitle);
   rhymeResultsContainer.append(rhymeResultsList);
 }
 
@@ -51,11 +49,14 @@ function createRhymeResultEntry(rhymeEntryData, rhymeResultsList) {
   saveRhymeButton.textContent = "+";
   saveRhymeButton.value = rhymeEntryData.word;
 
+  const lineBreak = document.createElement("br")
+  lineBreak.className = 'rhyme-list-break'
+
   //appends the created elements to the rhymeListItem.
   rhymeListItem.append(rhymeListWord);
   rhymeListItem.append(rhymeListScore);
   rhymeListItem.append(saveRhymeButton);
-
+  rhymeListItem.append(lineBreak);
   //Appends the rhymeListItem element to the rhymeResultsList element.
   rhymeResultsList.append(rhymeListItem);
 
