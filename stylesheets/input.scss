@@ -14,7 +14,8 @@ h2{
 .save-word-button,
 .rhyme-entry-score,
 .results-title,
-.removeEntryButton{
+.removeEntryButton, 
+.saved-word-text{
     font-family: base.$main-font;
 }
 
@@ -165,8 +166,8 @@ ul {
   grid-column: 1;
   border: solid gray;
   border-width: 0.1em 0em 0em 0em;
-  padding: 1em;
   background-color:white;
+  overflow: scroll;
 }
 
 .selected-words-list {
@@ -178,15 +179,16 @@ ul {
 }
 
 .saved-word-entry {
-  margin: 1em;
   display: flex;
   flex-direction: row;
+  background-color: black;
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  margin: 0em 1em 0em 1em
 }
 
-.removeEntryButton,
-.saved-word-text {
-  margin-right: 1em;
-}
+
 
 .removeEntryButton {
   margin-right: 1em;
