@@ -75,7 +75,9 @@ function addToSavedWordsList(rhymeString){
             //Pardes savedWordArray from JSON and stores the array as 'parsedSavedWordArray'.
             let parsedSavedWordArray = JSON.parse(sessionStorage.getItem('savedWordArray'))
             //Push passed in argument to the 'parsedSavedWordArray'.
-            parsedSavedWordArray.push(rhymeString)
+            if(!parsedSavedWordArray.includes(rhymeString)){
+                parsedSavedWordArray.push(rhymeString)
+            }
             /*
             'parsedSavedWordArray' is converted to JSON using JSON.stringify. 
             Overwrites 'savedWordArray' in sessionStorage with 'parsedSavedWordArray'.
