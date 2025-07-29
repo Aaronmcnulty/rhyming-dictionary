@@ -1,6 +1,5 @@
 h1,
-h2,
-h3 {
+h2 {
   margin: 0em;
 }
 
@@ -20,7 +19,7 @@ h3 {
 body {
   background-color: white;
   display: grid;
-  grid-template-rows: 0.5fr 10fr 1.5fr;
+  grid-template-rows: 0.5fr 8fr 2fr 1.5fr;
   grid-template-columns: 12fr;
   height: 100svh;
   margin: 0em;
@@ -33,7 +32,7 @@ body {
 }
 
 .rhyme-search-form {
-  grid-row: 3;
+  grid-row: 4;
   grid-column: 1;
   display: flex;
   flex-direction: column;
@@ -41,8 +40,7 @@ body {
   align-items: center;
   border: solid grey;
   border-width: 0.1em 0em 0.1em 0em;
-  border-radius: 1em 0em 0em 0em;
-  background-color: white;
+  background-color: rgb(241, 241, 241);
 }
 
 fieldset {
@@ -54,7 +52,7 @@ fieldset {
   padding: 0.5em;
   font-size: 1em;
   width: 70vw;
-  background-color: wheat;
+  background-color: white;
   color: rgb(104, 154, 135);
   font-weight: 800;
 }
@@ -64,31 +62,37 @@ fieldset {
   width: 20%;
   height: 2.5em;
   font-size: 4vw;
-  background-color: rgb(104, 154, 135);
-  color: wheat;
+  background-color: black;
+  color: white;
   border-radius: 1em;
   width: 75vw;
   font-weight: 800;
 }
 
 .rhyme-content-container {
-  background-color: rgb(47, 50, 50);
+  background-color: rgb(255, 255, 255);
   grid-row: 2;
   grid-column: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-apart;
-  height: 100%;
+  width: 98%;
   overflow: scroll;
+  border-radius: 1em;
+  border: solid;
 }
 
 .results-title {
   padding: 1em;
   align-self: center;
+  margin-bottom: 2em;
 }
 
 .rhyme-results-container {
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .results-list {
@@ -107,50 +111,57 @@ ul {
 .rhyme-results-entry {
   grid-row: 2;
   grid-column: 2;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 4fr 5fr 1fr;
+  grid-template-rows: 1fr 0.1fr;
   align-items: center;
-  flex-direction: row;
-  text-align: center;
-  border-radius: 1em;
+  padding: 1em;
   width: 88vw;
-  background-color: rgb(104, 154, 135);
+  background-color: white;
   margin-bottom: 1em;
 }
 
 .rhyme-entry-title {
+  grid-column: 1;
+  grid-row: 1;
   font-size: 5vw;
   font-weight: 800;
-  color: wheat;
+  color: black;
   font-family: "Nunito Sans", sans-serif;
 }
 
 .rhyme-entry-score {
+  grid-column: 2;
+  grid-row: 1;
   font-style: oblique;
 }
 
-.rhyme-entry-title,
-.rhyme-entry-score {
-  grid-column: 1;
+.rhyme-list-break {
+  grid-row: 2;
+  grid-column: 1/4;
+  color: black;
 }
 
 .save-word-button {
   grid-column: 3;
   grid-row: 1;
   border: none;
-  width: 15%;
-  height: 2.5em;
+  width: 12vw;
+  height: 12vw;
   font-size: 5vw;
   font-weight: 900;
-  background-color: wheat;
-  color: rgb(104, 154, 135);
+  background-color: black;
+  color: white;
   border-radius: 0.5em;
 }
 
 .selected-words-container {
+  grid-row: 3;
+  grid-column: 1;
   border: solid gray;
   border-width: 0.1em 0em 0em 0em;
   padding: 1em;
+  background-color: white;
 }
 
 .selected-words-list {
@@ -176,6 +187,9 @@ ul {
   margin-right: 1em;
   align-self: flex-start;
   border: none;
+  border-radius: 0.5em;
+  background-color: black;
+  color: white;
 }
 
 .main-title {
@@ -184,7 +198,7 @@ ul {
   justify-content: center;
   align-content: center;
   text-align: center;
-  background-color: rgb(255, 255, 255);
+  background-color: black;
   border: solid rgb(203, 201, 201);
   border-width: 0em 0em 0.1em 0em;
   height: 5vh;
@@ -192,7 +206,21 @@ ul {
 
 .page-title {
   font-size: 5vw;
-  color: rgb(104, 154, 135);
+  color: white;
+}
+
+.form-submit-button:active {
+  animation: click 0.1s;
+}
+
+.save-word-button:active {
+  animation: click 0.1s;
+}
+
+@keyframes click {
+  0% {
+    transform: translateY(5%);
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
