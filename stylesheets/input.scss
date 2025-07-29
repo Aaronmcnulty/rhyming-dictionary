@@ -1,5 +1,24 @@
 @use "base";
 
+h1,
+h2,
+h3 {
+  margin: 0em;
+}
+
+.page-title{
+  font-family: base.$title-font;
+}
+
+.form-text-input, 
+.form-submit-button, 
+.save-word-button,
+.rhyme-entry-score,
+.results-title,
+.removeEntryButton{
+    font-family: base.$main-font;
+}
+
 body {
   background-color: white;
   display: grid;
@@ -11,6 +30,8 @@ body {
 
 #loading-text-container {
   display: none;
+  grid-row: 2;
+  grid-column: 1;
 }
 
 .rhyme-search-form {
@@ -29,6 +50,29 @@ fieldset {
   border: 0em;
 }
 
+.form-text-input{
+  border-radius: 1em;
+  padding: 0.5em;
+  font-size: 1em;
+  width:60vw;
+  background-color:wheat;
+  color:   rgb(104, 154, 135);
+  font-weight: 800;
+}
+
+.form-submit-button{
+  border: none;
+  width: 20%;
+  height: 2.5em;
+  font-size: 4vw;
+  background-color: rgb(104, 154, 135);
+  color: wheat;
+  border-radius: 0.5em;
+  width:70vw;
+  font-weight: 800;
+}
+
+
 .rhyme-content-container {
   background-color: rgb(255, 246, 228);
   grid-row: 2;
@@ -43,7 +87,6 @@ fieldset {
 .results-title {
   padding: 1em;
   align-self: center;
-  
 }
 
 .rhyme-results-container {
@@ -74,8 +117,9 @@ ul {
 
 .rhyme-entry-title {
   font-size: 5vw;
-  font-weight: 1000;
+  font-weight: 800;
   color: rgb(104, 154, 135);
+  font-family: base.$main-font;
 }
 
 .rhyme-entry-score {
@@ -94,6 +138,8 @@ ul {
   width: 15%;
   height: 2.5em;
   font-size: 5vw;
+  font-weight: 900;
+  font-family: base.$main-font;
   background-color: rgb(104, 154, 135);
   color: wheat;
   border-radius: 0.5em;
@@ -137,7 +183,6 @@ ul {
   justify-content: center;
   align-content: center;
   text-align: center;
-  font-family: base.$title-font;
   color: rgb(74, 71, 71);
   background-color: rgb(255, 255, 255);
   border: solid grey;
@@ -149,9 +194,4 @@ ul {
   font-size: 5vw;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0em;
-  font-family: base.$title-font;
-}
+
