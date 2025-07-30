@@ -26,6 +26,9 @@ export function RhymeResultsTemplate(searchWord, rhymeResultsArray, rhymeResults
 
 //Function creates a list entry for each passed in argument and then appends it to the rhymeResultList.
 function createRhymeResultEntry(rhymeEntryData, rhymeResultsList) {
+
+  const formattedRhymeString = capitaliseFirst(rhymeEntryData.word)
+
   const rhymeListItem = document.createElement("li");
   rhymeListItem.className = "rhyme-results-entry";
 
@@ -33,7 +36,7 @@ function createRhymeResultEntry(rhymeEntryData, rhymeResultsList) {
   const rhymeListWord = document.createElement("p");
   rhymeListWord.className = "rhyme-entry-title";
   //Capitalises the first letter of the word before its inserted into innerText.
-  rhymeListWord.innerText = capitaliseFirst(rhymeEntryData.word);
+  rhymeListWord.innerText = capitaliseFirst(formattedRhymeString);
 
   //Creates 'rhyme score' element for the list entry.
   const rhymeListScore = document.createElement("p");
@@ -45,7 +48,7 @@ function createRhymeResultEntry(rhymeEntryData, rhymeResultsList) {
   saveRhymeButton.id = "addWordButton";
   saveRhymeButton.className = "save-word-button";
   saveRhymeButton.textContent = "+";
-  saveRhymeButton.value = rhymeEntryData.word;
+  saveRhymeButton.value = formattedRhymeString;
 
   const lineBreak = document.createElement("br")
   lineBreak.className = 'rhyme-list-break'
