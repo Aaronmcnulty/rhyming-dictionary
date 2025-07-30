@@ -13,15 +13,14 @@ h2 {
 .rhyme-entry-score,
 .results-title,
 .removeEntryButton,
-.saved-word-text,
-.saved-words-title {
+.saved-word-text {
   font-family: "Nunito Sans", sans-serif;
 }
 
 body {
   background-color: white;
   display: grid;
-  grid-template-rows: 0.5fr 7fr 3fr 1.5fr;
+  grid-template-rows: 0.5fr 8fr 2fr 1.5fr;
   grid-template-columns: 12fr;
   height: 100svh;
   margin: 0em;
@@ -77,23 +76,18 @@ fieldset {
   grid-column: 1;
   display: flex;
   flex-direction: column;
-  justify-self: center;
-  width: 95%;
+  justify-content: space-apart;
+  width: 98%;
   overflow: scroll;
   border-radius: 1em;
   border: solid;
-  margin: 2em 0em 2em 0em;
+  margin-top: 2em;
 }
 
 .results-title {
-  padding-left: 1em;
+  padding: 1em;
   align-self: center;
-  margin-bottom: 1em;
-  color: white;
-}
-
-.section-title-container {
-  background-color: black;
+  margin-bottom: 2em;
 }
 
 .rhyme-results-container {
@@ -163,26 +157,13 @@ ul {
   border-radius: 0.5em;
 }
 
-.saved-words-container {
+.selected-words-container {
   grid-row: 3;
   grid-column: 1;
-  display: flex;
-  flex-direction: column;
   border: solid gray;
-  border-width: 0.1em;
-  border-radius: 1em;
-  margin-bottom: 1em;
-  justify-self: center;
+  border-width: 0.1em 0em 0em 0em;
   background-color: white;
   overflow: scroll;
-  width: 95%;
-}
-
-.saved-words-title {
-  padding-left: 1em;
-  align-self: center;
-  margin-bottom: 1em;
-  color: white;
 }
 
 .selected-words-list {
@@ -196,9 +177,10 @@ ul {
 .saved-word-entry {
   display: flex;
   flex-direction: row;
+  background-color: black;
   padding: 1em;
   border-radius: 1em;
-  color: black;
+  color: white;
   margin: 0em 1em 0em 1em;
 }
 
@@ -242,4 +224,4 @@ ul {
   }
 }
 
-/*# sourceMappingURL=output.css.map */
+/*# sourceMappingURL=output.scss.map */

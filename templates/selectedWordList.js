@@ -5,19 +5,16 @@ export default function selectedWordList(){
     const savedWordArray = JSON.parse(sessionStorage.getItem('savedWordArray'))
 
     //Assigns container element to variable. 
-    const selectedWordsContainer = document.getElementById('selectedWordsContainer')
+    const savedListContainer = document.getElementById('saved-list-container')
     //Resets containers contents on each render.
-    selectedWordsContainer.textContent = ''
 
     //Create title element and append to the parent container.
-    const savedWordsTitle = document.createElement('h3')
+    const savedWordsTitle = document.getElementById("saved-words-title")
     savedWordsTitle.innerText = "Your Selected Rhymes"
-    savedWordsTitle.className = "saved-words-title"
-    selectedWordsContainer.append(savedWordsTitle)
 
     //created selectedWords container. 
-    const selectedWords = document.createElement('ul')
-    selectedWords.className = "selected-words-list"
+    const selectedWordsList = document.createElement('ul')
+    selectedWordsList.className = "selected-words-list"
     //Map each entry from the savedWordArray and pass it to the createWordListEntry function.
     savedWordArray.map(savedWord => {
        createWordListEntry(savedWord)
@@ -25,6 +22,9 @@ export default function selectedWordList(){
 
 
     function createWordListEntry(savedWord){
+
+        savedListContainer.innerText = ''
+
     //Creates list entry element from the passed in 'savedWord' string.
             const wordListEntry = document.createElement('li')
             wordListEntry.className = 'saved-word-entry'
@@ -47,8 +47,8 @@ export default function selectedWordList(){
     //Appends created elements to their respective parent elements.
             wordListEntry.append(wordListText)
             wordListEntry.append(removeEntryButton)
-            selectedWords.append(wordListEntry)
-            selectedWordsContainer.append(selectedWords)
+            selectedWordsList.append(wordListEntry)
+            savedListContainer.append(selectedWordsList)
             
         }
         

@@ -80,7 +80,6 @@ fieldset {
   grid-column: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   justify-self: center;
   width: 95%;
   overflow: scroll;
@@ -96,7 +95,7 @@ fieldset {
   color: white;
 }
 
-.results-title-container{
+.section-title-container{
   background-color: black;
 }
 
@@ -112,7 +111,6 @@ fieldset {
   margin: 0px;
   justify-content: center;
   align-items: center;
-  
 }
 
 ul {
@@ -169,9 +167,11 @@ ul {
   border-radius: 0.5em;
 }
 
-.selected-words-container {
+.saved-words-container {
   grid-row: 3;
   grid-column: 1;
+  display: flex;
+  flex-direction: column;
   border: solid gray;
   border-width: 0.1em;
   border-radius: 1em;
@@ -180,7 +180,13 @@ ul {
   background-color:white;
   overflow: scroll;
   width: 95%;
+}
 
+.saved-words-title{
+  padding-left: 1em;
+  align-self: center;
+  margin-bottom: 1em;
+  color: white;
 }
 
 .selected-words-list {
@@ -194,10 +200,9 @@ ul {
 .saved-word-entry {
   display: flex;
   flex-direction: row;
-  background-color: black;
   padding: 1em;
   border-radius: 1em;
-  color: white;
+  color: black;
   margin: 0em 1em 0em 1em
 }
 
