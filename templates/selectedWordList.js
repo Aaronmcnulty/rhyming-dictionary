@@ -12,6 +12,7 @@ export default function selectedWordList(){
     //Create title element and append to the parent container.
     const savedWordsTitle = document.createElement('h3')
     savedWordsTitle.innerText = "Your Selected Rhymes"
+    savedWordsTitle.className = "saved-words-title"
     selectedWordsContainer.append(savedWordsTitle)
 
     //created selectedWords container. 

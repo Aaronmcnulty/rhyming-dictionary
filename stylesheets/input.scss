@@ -15,7 +15,8 @@ h2{
 .rhyme-entry-score,
 .results-title,
 .removeEntryButton, 
-.saved-word-text{
+.saved-word-text,
+.saved-words-title{
     font-family: base.$main-font;
 }
 
@@ -199,8 +200,6 @@ ul {
   color: white;
   margin: 0em 1em 0em 1em
 }
-
-
 
 .removeEntryButton {
   margin-right: 1em;

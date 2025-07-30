@@ -13,7 +13,8 @@ h2 {
 .rhyme-entry-score,
 .results-title,
 .removeEntryButton,
-.saved-word-text {
+.saved-word-text,
+.saved-words-title {
   font-family: "Nunito Sans", sans-serif;
 }
 
