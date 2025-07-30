@@ -10,7 +10,7 @@ export default function selectedWordList(){
 
     //Create title element and append to the parent container.
     const savedWordsTitle = document.getElementById("saved-words-title")
-    savedWordsTitle.innerText = "Your Selected Rhymes"
+    savedWordsTitle.innerText = "Your Saved Rhymes"
 
     //created selectedWords container. 
     const selectedWordsList = document.createElement('ul')

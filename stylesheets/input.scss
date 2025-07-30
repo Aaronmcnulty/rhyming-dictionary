@@ -1,7 +1,8 @@
 @use "base";
 
 h1,
-h2{
+h2,
+p{
   margin: 0em;
 }
 
@@ -26,6 +27,7 @@ body {
   grid-template-rows: 0.5fr 3fr 7fr 1.5fr;
   grid-template-columns: 12fr;
   height: 100svh;
+  width: 100svw;
   margin: 0em;
 }
 
@@ -81,12 +83,14 @@ fieldset {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 95%;
+  width: 95vw;
   overflow: scroll;
   border-radius: 1em;
   border:solid;
   margin: 2em 0em 1em 0em;
 }
+
+
 
 .results-title {
   padding-left: 1em;
@@ -109,8 +113,10 @@ fieldset {
 .results-list {
   display: flex;
   margin: 0px;
+  padding-top: 2em;
   justify-content: center;
   align-items: center;
+
 }
 
 ul {
@@ -178,13 +184,14 @@ ul {
   margin-top: 2em;
   justify-self: center;
   background-color:white;
-  overflow: scroll;
-  width: 95%;
+  width: 95vw;
+  overflow: hidden;
 }
 
 .saved-words-title{
   padding-left: 1em;
   align-self: center;
+  text-align: center;
   margin-bottom: 1em;
   color: white;
 }
@@ -192,29 +199,38 @@ ul {
 .selected-words-list {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 95%;
   overflow: scroll;
-  justify-content: space-around;
+  margin:0em;
 }
 
 .saved-word-entry {
   display: flex;
-  flex-direction: row;
-  padding: 1em;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0.5em;
+  margin:  1em;
   border-radius: 1em;
   color: black;
-  margin: 0em 1em 0em 1em
+  background-color: rgba(0, 0, 0, 0.061);
+  font-size: 5vw;
+  min-width: 25dvw;
+  border:solid rgb(195, 188, 188);
+}
+
+.saved-word-text{
+  margin-bottom: 1em;
 }
 
 .removeEntryButton {
-  margin-right: 1em;
-  align-self: flex-start;
   border: none;
   border-radius: 0.5em;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
+  width: fit-content;
+  align-self: flex-end;
 }
-
+ 
 .main-title {
   grid-row: 1;
   grid-column: 1/3;
