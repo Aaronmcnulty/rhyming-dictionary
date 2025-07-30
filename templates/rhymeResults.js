@@ -1,11 +1,9 @@
 import selectedWordList from "./selectedWordList.js";
 import { capitaliseFirst } from "../modules/capitalise.js";
 
-export function RhymeResultsTemplate(searchWord, rhymeResultsArray) {
+export function RhymeResultsTemplate(searchWord, rhymeResultsArray, rhymeResultsContainer) {
   //Template creates the elements to display the passed in 'searchWord' and 'rhymesResultsArray'.
-  const rhymeResultsContainer = document.getElementById(
-    "rhymeResultsContainer"
-  );
+  
   rhymeResultsContainer.innerText = "";
 
   //Create title and insert the 'searchWord' argument into the string.

@@ -1,6 +1,7 @@
 import { RhymeResultsTemplate } from "./templates/rhymeResults.js";
 import { capitaliseFirst } from "./modules/capitalise.js";
 import { rhymeSearchForm } from "./functions/rhymeSearchForm/rhymeSearchForm.js"
+import { titleRandomiser } from "./modules/titleRandomiser/titleRandomiser.js"
 
 //Runs function so search form is ready for use on render.
 rhymeSearchForm()
@@ -12,6 +13,10 @@ sessionStorage.setItem("savedWordArray", JSON.stringify(savedWordArray));
 let rhymeSearchResults = "";
 const loadingElement = document.getElementById('loading-text-container') 
 
+const rhymeResultsContainer = document.getElementById(
+    "rhymeResultsContainer"
+  );
+
 function loadingDisplayToggle(){
   if(loadingElement.style.display == 'flex'){
     loadingElement.style.display = 'none'
@@ -20,8 +25,13 @@ function loadingDisplayToggle(){
   }
 }
 
+const pageTitle = document.getElementById('page-title')
+
+
 // Fetch the rhyming words from the api.
 export async function fetchRhymeData(searchTerm) {
+  titleRandomiser(pageTitle)
+  rhymeResultsContainer.innerText = ''
   loadingDisplayToggle()
   //Append the url with the user entered search term.
   const url = `https://api.datamuse.com/words?sl=${searchTerm}`;
@@ -45,5 +55,5 @@ export async function fetchRhymeData(searchTerm) {
     letter capitalised.
   */
   loadingDisplayToggle()
-  RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults);
+  RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults, rhymeResultsContainer);
 }
