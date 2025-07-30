@@ -1,5 +1,5 @@
 import selectedWordList from "./selectedWordList.js";
-import { capitaliseFirst } from "../modules/capitalise.js";
+import { capitaliseFirst } from "../modules/capitalise/capitalise.js";
 
 export function RhymeResultsTemplate(searchWord, rhymeResultsArray, rhymeResultsContainer) {
   //Template creates the elements to display the passed in 'searchWord' and 'rhymesResultsArray'.

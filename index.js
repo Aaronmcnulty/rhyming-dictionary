@@ -1,6 +1,6 @@
 import { RhymeResultsTemplate } from "./templates/rhymeResults.js";
-import { capitaliseFirst } from "./modules/capitalise.js";
-import { rhymeSearchForm } from "./functions/rhymeSearchForm/rhymeSearchForm.js"
+import { capitaliseFirst } from "./modules/capitalise/capitalise.js";
+import { rhymeSearchForm } from "./modules/rhymeSearchForm/rhymeSearchForm.js"
 import { titleRandomiser } from "./modules/titleRandomiser/titleRandomiser.js"
 
 //Runs function so search form is ready for use on render.
