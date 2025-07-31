@@ -35,3 +35,28 @@ describe('titleRandomiser', () => {
   });
 
 });
+
+
+describe('TitleRhymesArray', () => {
+
+    const titleRhymeArrayCopy = ['LIME', 'CRIME', 'SIGN', 'DEVINE', 'INCLINE', 'BRINE', 'SHINE', 'CLIMB', 'FINE', 'DINE', 'SINE', 'MIME']
+
+    test('Should be equal to the titleRhymeArrayCopy', () => {
+        expect(titleRhymesArray).toStrictEqual(titleRhymeArrayCopy);
+    });
+
+    test('Should be an array', () => {
+        expect(Array.isArray(titleRhymesArray)).toBe(true);
+    });
+
+    test('Should NOT be an empty array', () => {
+        const emptyArray = []
+        expect(titleRhymesArray !== emptyArray).toBe(true);
+    });
+
+    test('Should be an array of ONLY strings', () => {
+        const isArrayOfStrings = (currentValue) => typeof currentValue == 'string';
+        expect(titleRhymesArray.every(isArrayOfStrings)).toBe(true);
+    });
+
+})
