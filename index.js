@@ -24,7 +24,6 @@ function loadingDisplayToggle(){
     loadingElement.style.display = 'flex'
   }
 }
-
 const pageTitle = document.getElementById('page-title')
 
 
