@@ -29,7 +29,8 @@ const pageTitle = document.getElementById('page-title')
 
 // Fetch the rhyming words from the api.
 export async function fetchRhymeData(searchTerm) {
-  titleRandomiser(pageTitle)
+  pageTitle.innerText = titleRandomiser()
+  
   rhymeResultsContainer.innerText = ''
   loadingDisplayToggle()
   //Append the url with the user entered search term.
