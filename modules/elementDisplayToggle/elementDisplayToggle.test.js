@@ -7,30 +7,34 @@ jest.mock('fs');
 describe('elementDisplayToggle', () => {
         
     const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-    const toad = dom.window.document.createElement('div')
-    
-    beforeEach(() => {
-        toad.style.display = 'flex'
+    const mockElement = dom.window.document.createElement('div')
+    mockElement.style.display = 'flex'
+
+    afterEach(() => {
+        mockElement.style.display = 'flex'
     });
    
     test('Should change element display value to "none"', () => {
-        expect(toad.style.display).toBe('flex');
-        elementDisplayToggle(toad)
-        expect(toad.style.display).toBe('none');
+        expect(mockElement.style.display).toBe('flex');
+        elementDisplayToggle(mockElement)
+        expect(mockElement.style.display).toBe('none');
     });
 
     test('Should NOT change element display when function isnt called', () => {
-        expect(toad.style.display).toBe('flex');
-        expect(toad.style.display).toBe('flex');
+        expect(mockElement.style.display).toBe('flex');
+        expect(mockElement.style.display).toBe('flex');
     });
 
     test('Should change element display value to "none" and then back to "flex" ', () => {
-        elementDisplayToggle(toad)
-        expect(toad.style.display).toBe('none');
-        elementDisplayToggle(toad)
-        expect(toad.style.display).toBe('flex');
+        elementDisplayToggle(mockElement)
+        expect(mockElement.style.display).toBe('none');
+        elementDisplayToggle(mockElement)
+        expect(mockElement.style.display).toBe('flex');
     });
 
-
+     test('Should NOT change element display value if the original is neither "flex" nor "none"', () => { 
+        mockElement.style.display = 'block'
+        expect(mockElement.style.display).toBe('block');
+    }); 
 
 })
