@@ -2,6 +2,7 @@ import { RhymeResultsTemplate } from "./templates/rhymeResults.js";
 import { capitaliseFirst } from "./modules/capitalise/capitalise.js";
 import { rhymeSearchForm } from "./modules/rhymeSearchForm/rhymeSearchForm.js"
 import { titleRandomiser } from "./modules/titleRandomiser/titleRandomiser.js"
+import { elementDisplayToggle } from "./modules/elementDisplayToggle/elementDisplayToggle.js";
 
 //Runs function so search form is ready for use on render.
 rhymeSearchForm()
@@ -12,18 +13,11 @@ sessionStorage.setItem("savedWordArray", JSON.stringify(savedWordArray));
 
 let rhymeSearchResults = "";
 const loadingElement = document.getElementById('loading-text-container') 
-
 const rhymeResultsContainer = document.getElementById(
     "rhymeResultsContainer"
   );
 
-function loadingDisplayToggle(){
-  if(loadingElement.style.display == 'flex'){
-    loadingElement.style.display = 'none'
-  } else {
-    loadingElement.style.display = 'flex'
-  }
-}
+
 const pageTitle = document.getElementById('page-title')
 
 
@@ -32,7 +26,7 @@ export async function fetchRhymeData(searchTerm) {
   pageTitle.innerText = titleRandomiser()
   
   rhymeResultsContainer.innerText = ''
-  loadingDisplayToggle()
+  elementDisplayToggle(loadingElement)
   //Append the url with the user entered search term.
   const url = `https://api.datamuse.com/words?sl=${searchTerm}`;
   try {
@@ -54,6 +48,6 @@ export async function fetchRhymeData(searchTerm) {
     'searhTerm' is passed to 'capitaliseFirst'function which returns the string with the first 
     letter capitalised.
   */
-  loadingDisplayToggle()
+  elementDisplayToggle(loadingElement)
   RhymeResultsTemplate(capitaliseFirst(searchTerm), rhymeSearchResults, rhymeResultsContainer);
 }

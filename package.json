@@ -22,5 +22,8 @@
     "babel-jest": "^30.0.4",
     "jest": "^30.0.4",
     "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "jsdom": "^26.1.0"
   }
 }
